@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.AccountSettingsActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize" />
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/appBar">
+
+            <com.yarolegovich.mp.MaterialPreferenceScreen
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.yarolegovich.mp.MaterialPreferenceCategory
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="0dp"
+                    app:cardMaxElevation="0dp"
+                    app:mpc_title="Notification Settings">
+
+                    <com.yarolegovich.mp.MaterialCheckboxPreference
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:mp_key="enableApprovalNotification"
+                        app:mp_summary="Receives Approval notifications and reminder"
+                        app:mp_title="Approval Notification" />
+
+                    <com.yarolegovich.mp.MaterialSwitchPreference
+                        android:layout_width="match_parent"
+                        app:mp_key="notificationSounds"
+                        app:mp_title="Notification Sounds"
+                        android:layout_height="wrap_content" />
+                </com.yarolegovich.mp.MaterialPreferenceCategory>
+
+            </com.yarolegovich.mp.MaterialPreferenceScreen>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
